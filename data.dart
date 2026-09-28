@@ -1,113 +1,169 @@
-class User {
+class Account {
   String username;
   String password;
-  String name;
+  String displayName;
 
-  User({required this.username, required this.password, required this.name});
-}
-
-User user1 = User(username: "zakinanda", password: "023", name: "Nanda");
-
-class Menu {
-  int id;
-  String name;
-  String category;
-  String description;
-  String price;
-  String image;
-  int likes;
-
-  Menu({
-    required this.id,
-    required this.name,
-    required this.category,
-    required this.description,
-    required this.price,
-    required this.image,
-    this.likes = 0,
+  Account({
+    required this.username,
+    required this.password,
+    required this.displayName,
   });
 }
 
-final List<Menu> menus = [
-  Menu(
-    id: 1,
-    name: "Mie Gacoan",
-    category: "Mie",
-    price: "Rp.12000",
-    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624",
-    description: "Mie pedas dengan pilihan level dan cita rasa khas Gacoan.",
-    likes: 12,
+Account account = Account(
+  username: "adminuniqlo",
+  password: "uniqlo123",
+  displayName: "Admin UNIQLO",
+);
+
+class Product {
+  int id;
+  String productName;
+  String type;
+  String details;
+  String price;
+  String imageUrl;
+  int likeCount;
+  int stock;
+  List<String> sizes;
+
+  Product({
+    required this.id,
+    required this.productName,
+    required this.type,
+    required this.details,
+    required this.price,
+    required this.imageUrl,
+    required this.likeCount,
+    required this.stock,
+    required this.sizes,
+  });
+}
+
+final List<Product> catalog = [
+  Product(
+    id: 101,
+    productName: "AIRism Cotton Oversized T-Shirt",
+    type: "T-Shirt",
+    price: "Rp199.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    details:
+        "Kaos oversized dengan bahan nyaman dan cocok digunakan untuk aktivitas sehari-hari.",
+    likeCount: 28,
+    stock: 35,
+    sizes: ["S", "M", "L", "XL"],
   ),
-  Menu(
-    id: 2,
-    name: "Mie Hompimpa",
-    category: "Mie",
-    price: "Rp.12000",
-    image: "https://images.unsplash.com/photo-1552611052-33e04de081de",
-    description: "Mie dengan cita rasa gurih dan pedas.",
-    likes: 8,
+
+  Product(
+    id: 102,
+    productName: "Crew Neck Short Sleeve T-Shirt",
+    type: "T-Shirt",
+    price: "Rp149.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    details:
+        "Kaos dengan desain sederhana yang mudah dipadukan dengan berbagai jenis pakaian.",
+    likeCount: 19,
+    stock: 42,
+    sizes: ["S", "M", "L", "XL"],
   ),
-  Menu(
-    id: 3,
-    name: "Mie Suit",
-    category: "Mie",
-    price: "Rp.12000",
-    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624",
-    description: "Mie dengan cita rasa gurih yang lebih ringan.",
-    likes: 10,
+
+  Product(
+    id: 103,
+    productName: "Graphic Print T-Shirt",
+    type: "T-Shirt",
+    price: "Rp299.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1",
+    details:
+        "Kaos dengan desain grafis modern untuk memberikan tampilan casual dan stylish.",
+    likeCount: 36,
+    stock: 27,
+    sizes: ["S", "M", "L"],
   ),
-  Menu(
-    id: 4,
-    name: "Udang Keju",
-    category: "Dimsum",
-    price: "Rp.12000",
-    image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c",
-    description: "Dimsum udang dengan isian keju yang gurih.",
-    likes: 15,
+
+  Product(
+    id: 104,
+    productName: "Ultra Light Down Jacket",
+    type: "Jacket",
+    price: "Rp999.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1548883354-94bcfe321cbb",
+    details:
+        "Jaket ringan dengan desain praktis yang dapat digunakan untuk berbagai aktivitas.",
+    likeCount: 47,
+    stock: 18,
+    sizes: ["S", "M", "L", "XL"],
   ),
-  Menu(
-    id: 5,
-    name: "Udang Rambutan",
-    category: "Dimsum",
-    price: "Rp.12000",
-    image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c",
-    description: "Dimsum udang dengan balutan kulit renyah.",
-    likes: 11,
+
+  Product(
+    id: 105,
+    productName: "Fleece Full-Zip Jacket",
+    type: "Jacket",
+    price: "Rp599.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1551028719-00167b16eac5",
+    details:
+        "Jaket berbahan fleece yang lembut dan memberikan rasa hangat saat digunakan.",
+    likeCount: 32,
+    stock: 23,
+    sizes: ["M", "L", "XL"],
   ),
-  Menu(
-    id: 6,
-    name: "Pangsit Goreng",
-    category: "Dimsum",
-    price: "Rp.12000",
-    image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c",
-    description: "Pangsit goreng dengan tekstur renyah dan gurih.",
-    likes: 9,
+
+  Product(
+    id: 106,
+    productName: "Wide Straight Jeans",
+    type: "Pants",
+    price: "Rp599.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1542272604-787c3835535d",
+    details:
+        "Celana jeans dengan potongan wide straight yang memberikan tampilan modern.",
+    likeCount: 41,
+    stock: 31,
+    sizes: ["28", "30", "32", "34"],
   ),
-  Menu(
-    id: 7,
-    name: "Es Gobak Sodor",
-    category: "Minuman",
-    price: "Rp.9000",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc",
-    description: "Minuman segar dengan rasa manis dan menyegarkan.",
-    likes: 20,
+
+  Product(
+    id: 107,
+    productName: "Smart Ankle Pants",
+    type: "Pants",
+    price: "Rp499.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80",
+    details:
+        "Celana dengan desain clean dan modern yang cocok untuk tampilan casual maupun formal.",
+    likeCount: 25,
+    stock: 26,
+    sizes: ["28", "30", "32", "34"],
   ),
-  Menu(
-    id: 8,
-    name: "Es Teklek",
-    category: "Minuman",
-    price: "Rp.9000",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc",
-    description: "Minuman segar yang cocok dinikmati bersama menu Gacoan.",
-    likes: 14,
+
+  Product(
+    id: 108,
+    productName: "Round Mini Shoulder Bag",
+    type: "Bag",
+    price: "Rp299.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1594223274512-ad4803739b7c",
+    details:
+        "Tas bahu berukuran compact dengan desain minimalis untuk menemani aktivitas sehari-hari.",
+    likeCount: 33,
+    stock: 15,
+    sizes: ["One Size"],
   ),
-  Menu(
-    id: 9,
-    name: "Es Tea",
-    category: "Minuman",
-    price: "Rp.6000",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc",
-    description: "Es teh segar dengan rasa manis dan menyegarkan.",
-    likes: 18,
+
+  Product(
+    id: 109,
+    productName: "UV Protection Cap",
+    type: "Accessories",
+    price: "Rp199.000",
+    imageUrl:
+        "https://images.unsplash.com/photo-1588850561407-ed78c282e89b",
+    details:
+        "Topi dengan desain casual yang cocok digunakan sebagai pelengkap berbagai gaya.",
+    likeCount: 22,
+    stock: 20,
+    sizes: ["One Size"],
   ),
 ];
